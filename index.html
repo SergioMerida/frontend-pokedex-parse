@@ -7,7 +7,7 @@
     <title>Pokedex-AngularJs</title>
 
     <!-- CSS -->
-    <link rel="stylesheet" href="bower_components/bootstrap/dist/css/bootstrap.min.css">
+    <link rel = "stylesheet" type = "text/css" href="bootstrap/css/bootstrap.min.css">
     <link rel="stylesheet" href="css/styles.css">
     <!--Parse-->
     <script src="bower_components/parse/parse.min.js"></script> 
@@ -15,6 +15,46 @@
 
   <body ng-app="pokemonModule">
       <div ng-view></div>
+
+	<div class="container-full ">
+	            <div class="col-md-12">
+	                <div class="row colorpokemon altura" ng-hide="currentUser">
+	                    <img src="images/pikachu1.gif" height ="390px">
+	                </div><!--cierre de row1-->
+	                <div class="row">
+	                <div class="col-md-12 color altura2">
+	                    
+	                </div>
+	            </div><!--cierre de col-12-->
+
+	        <div class="col-md-12" class="color2">
+	            <div class="row colorpokemon2">
+	                <div class="container">
+
+	                    <div class="col-md-6"> <!--registro de usuario -->
+	                        <div class="col-md-1">
+	                        </div>
+	                        <div class="col-md-5 col-md-offset-5">
+	                           	<h3>ingreso de usuario</h3>
+	                             <br>
+	                        </div> <!--close col-3-->
+
+	                    </div><!-- close col- 6 -->
+	                        <div class="col-md-6 "> <!--log in de usuario-->
+
+	                            <div class="col-md-5">
+	                            	<h3>creacion de usurio</h3>
+	                            <br><br>
+	                            <br>
+	                            </div>
+	                    </div>
+	                </div> <!--close currentUser-->
+	            </div> <!--close row 2-->
+	        </div> <!--clse col-12-->
+	</div> <!---cierre primer container-full -->
+
+
+
 
   <!--Angular-->
   <script src="bower_components/angular/angular.min.js"></script>
