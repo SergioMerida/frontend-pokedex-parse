@@ -1,49 +1,60 @@
-  <div class="jumbotron">
-    <div class="container">
-     <div class="row">
-      <div class="col-md-1 col-xs-1"></div>
-      <div class="col-md-4 col-xs-4" >
-       <div ng-show="currentUser">
-          <p>
-          <h1>Bienvenido <strong><u>{{currentUser.get('username')}}</u></strong></h1>
-          <button onclick="location.href='#/profile'" class="blackButton">Listado de canciones</button>
-          <button ng-click="logOut(user)" class="blackButton">Cerrar sesion</button>
-          </p>
-        </div>
-            <!--Form for Sign Up-->
-            <form class="form-horizontal" ng-hide="currentUser">
-             <h2>Sign Up</h2>
-              <div class="form-group">
-               Email: <input type="email" ng-model="user.email" class="form-control" placeholder="Email">
-              </div><!--Close of first form-group-->
-              <div class="form-group">
-               Username: <input type="text" ng-model="user.username" class="form-control" placeholder="Username">
-              </div><!--Close of second form-group-->
-              <div class="form-group"> 
-               Password: <input type="password" ng-model="user.password" class="form-control" placeholder="Password">
-              </div><!--Close of third form-group-->
-              <div class="form-group">
-               <button ng-click="signUp(user, '/profile')" class="btn pull-right">Sign up!!</button>
-              </div><!--Close of fourth form-group--> 
-            </form><!--Close of signUp form-->     
-      </div><!--Close of col-md-4--> 
-      <div class="col-md-2 col-xs-2"></div> 
-      <div class="col-md-4 col-xs-4" ng-hide="currentUser">
-        <!--Form to log In-->
-            <form class="form-horizontal">
-             <h2>Log in</h2>
-              <div class="form-group">
-               Username: <input type="text" ng-model="user.username" class="form-control" placeholder="Username">
-              </div><!--Close of first from group second form-->
-              <div class="form-group">
-               Password: <input type="password" ng-model="user.password" class="form-control" placeholder="Password">
-              </div><!--Close of second form group second form-->
-              <div class="form-group"> 
-               <button ng-click="logIn(user, '/profile')" class="btn pull-right">Log in</button>
-              </div><!--Close of third form group second form-->
-            </form><!--Close of LogIn form-->
-       </div><!--CLose of col-md-5-->
-      <div class="col-md-1 col-xs-1"></div>
-     </div><!--Close of row-->
-    </div><!--Second container-->
-  </div>
+	<div class="jumbotron">
+		<div class="container">
+		 <div class="row">
+			<div class="col-md-1 col-xs-1"></div>
+			<div class="col-md-4 col-xs-4" >
+				<div ng-show="currentUser">
+					<p>
+						<h1>Bienvenido <strong><u>{{currentUser.get('username')}}</u></strong></h1>
+						<button onclick="location.href='#/profile'" class="blackButton">Listado de canciones</button>
+						<button ng-click="logOut(user)" class="blackButton">Cerrar sesion</button>
+					</p>
+				</div>
+				<!--Password requierements-->
+				<div> 
+					<!--Form for Sign Up-->
+					<form class="form-horizontal" ng-hide="currentUser">
+						<h2>Sign Up</h2>
+						<div class="form-group">
+							Email: <input type="email" ng-model="user.email" class="form-control" placeholder="Email">
+						</div><!--Close of first form-group-->
+						<div class="form-group">
+							Username: <input type="text" ng-model="user.username" class="form-control" placeholder="Username">
+						</div><!--Close of second form-group-->
+						<div class="form-group"> 
+							Password: <input type="password" ng-model="user.password" class="form-control" placeholder="Password">
+						</div><!--Close of third form-group-->
+						<div class="form-group">
+							<button ng-click="signUp(user, '/profile')" class="btn pull-right">Sign up!!</button>
+						</div><!--Close of fourth form-group-->
+					</form><!--Close of signUp form-->
+					<div ng-show="passLength"><span class="glyphicon glyphicon-ok"></span><span> Your password is longer than 8 characters</span></div>
+					<div ng-show="!passLength"><span class="glyphicon glyphicon-remove"></span><span> Your password isn't longer than 8 characters</span></div>
+					<div ng-show="passUpper"><span class="glyphicon glyphicon-ok"></span><span> Your password has Uppercase</span></div>
+					<div ng-show="!passUpper"><span class="glyphicon glyphicon-remove"></span><span> Your password don't have Uppercase</span></div>
+					<div ng-show="passLower"><span class="glyphicon glyphicon-ok"></span><span> Your password has LowerCase</span></div>
+					<div ng-show="!passLower"><span class="glyphicon glyphicon-remove"></span><span> Your password don't have LowerCase</span></div>
+					<div ng-show="passNumber"><span class="glyphicon glyphicon-ok"></span><span> Your password has numbers</span></div>
+					<div ng-show="!passNumber"><span class="glyphicon glyphicon-remove"></span><span> Your password don't have numbers</span></div>
+				</div> <!--Password requierements-->
+			</div><!--Close of col-md-4--> 
+			<div class="col-md-2 col-xs-2"></div> 
+			<div class="col-md-4 col-xs-4" ng-hide="currentUser">
+				<!--Form to log In-->
+						<form class="form-horizontal">
+						 <h2>Log in</h2>
+							<div class="form-group">
+							 Username: <input type="text" ng-model="user.username" class="form-control" placeholder="Username">
+							</div><!--Close of first from group second form-->
+							<div class="form-group">
+							 Password: <input type="password" ng-model="user.password" class="form-control" placeholder="Password">
+							</div><!--Close of second form group second form-->
+							<div class="form-group"> 
+							 <button ng-click="logIn(user, '/profile')" class="btn pull-right">Log in</button>
+							</div><!--Close of third form group second form-->
+						</form><!--Close of LogIn form-->
+			 </div><!--CLose of col-md-5-->
+			<div class="col-md-1 col-xs-1"></div>
+		 </div><!--Close of row-->
+		</div><!--Second container-->
+	</div>
