@@ -1,0 +1,26 @@
+body {
+	background-color: black;
+	color: white;
+}
+
+.carousel-indicators li{
+        background-color: black;
+    }
+
+.title-image {
+	margin-left: 25%;
+}
+
+.login-button {
+	background-color:black;
+	color:yellow;
+	border-color: #BDBDBD;
+}
+
+.green-words {
+	color: green;
+}
+
+.red-words {
+	color: red;
+}

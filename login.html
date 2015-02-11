@@ -1,5 +1,47 @@
-	<div class="jumbotron">
-		<div class="container">
+   <div class="container-full">
+    <div class="row">
+     <div class="col-md-1 col-xs-1"></div>
+     <div class="col-md-10">
+      <div id="carousel" class="carousel slide" data-ride="carousel">
+      <!-- Indicators -->
+      <ol class="carousel-indicators">
+        <li data-target="#carousel" data-slide-to="0" >
+        </li>
+        <li data-target="#carousel" data-slide-to="1">
+        </li>
+        <li data-target="#carousel" data-slide-to="2">
+        </li>
+      </ol><!--Close of indicators-->
+
+      <!-- Wrapper for slides -->
+      <div class="carousel-inner" role="listbox">
+        <div class="item active">
+          <img src="images/charizardY.jpg" class="img-responsive" >
+        </div><!--Close of item active-->
+        <div class="item">
+          <img src="images/diancie.jpg" class="img-responsive">
+        </div><!--Close of second item-->
+        <div class="item">
+          <img src="images/gengar.jpg" class="img-responsive">
+        </div><!--Close of third item-->
+      </div><!--Close of wrapper for slides-->
+     </div><!--Close of carousel-->
+    </div><!--Close of col-md-12-->
+    <div class="col-md-1"></div>
+   </div><!--Close of row-->
+  </div><!--First Container-->
+
+  <div class="container">
+  	<div class="row">
+  	 <div class="col-md-2"></div>
+  	 <div class="col-md-8">
+  	  <img src="images/title.png" width="50%" class="img-responsive title-image">	
+  	 </div>
+  	 <div class="col-md-2"></div>	
+  	</div><!--Close of row-->
+  </div><!--Container image-->
+
+	<div class="container">
 		 <div class="row">
 			<div class="col-md-1 col-xs-1"></div>
 			<div class="col-md-4 col-xs-4" >
@@ -14,7 +56,6 @@
 				<div> 
 					<!--Form for Sign Up-->
 					<form class="form-horizontal" ng-hide="currentUser">
-						<h2>Sign Up</h2>
 						<div class="form-group">
 							Email: <input type="email" ng-model="user.email" class="form-control" placeholder="Email">
 						</div><!--Close of first form-group-->
@@ -25,24 +66,23 @@
 							Password: <input type="password" ng-model="user.password" class="form-control" placeholder="Password">
 						</div><!--Close of third form-group-->
 						<div class="form-group">
-							<button ng-click="signUp(user, '/profile')" class="btn pull-right">Sign up!!</button>
+							<button ng-click="signUp(user, '/profile')" class="btn pull-right login-button">Sign up!!</button>
 						</div><!--Close of fourth form-group-->
 					</form><!--Close of signUp form-->
-					<div ng-show="passLength"><span class="glyphicon glyphicon-ok"></span><span> Your password is longer than 8 characters</span></div>
-					<div ng-show="!passLength"><span class="glyphicon glyphicon-remove"></span><span> Your password isn't longer than 8 characters</span></div>
-					<div ng-show="passUpper"><span class="glyphicon glyphicon-ok"></span><span> Your password has Uppercase</span></div>
-					<div ng-show="!passUpper"><span class="glyphicon glyphicon-remove"></span><span> Your password don't have Uppercase</span></div>
-					<div ng-show="passLower"><span class="glyphicon glyphicon-ok"></span><span> Your password has LowerCase</span></div>
-					<div ng-show="!passLower"><span class="glyphicon glyphicon-remove"></span><span> Your password don't have LowerCase</span></div>
-					<div ng-show="passNumber"><span class="glyphicon glyphicon-ok"></span><span> Your password has numbers</span></div>
-					<div ng-show="!passNumber"><span class="glyphicon glyphicon-remove"></span><span> Your password don't have numbers</span></div>
+					<div ng-show="passLength" class="green-words"><span class="glyphicon glyphicon-ok"></span><span> Your password is longer than 8 characters</span></div>
+					<div ng-show="!passLength" class="red-words"><span class="glyphicon glyphicon-remove"></span><span> Your password isn't longer than 8 characters</span></div>
+					<div ng-show="passUpper" class="green-words"><span class="glyphicon glyphicon-ok"></span><span> Your password has Uppercase</span></div>
+					<div ng-show="!passUpper" class="red-words"><span class="glyphicon glyphicon-remove"></span><span> Your password don't have Uppercase</span></div>
+					<div ng-show="passLower" class="green-words"><span class="glyphicon glyphicon-ok"></span><span> Your password has LowerCase</span></div>
+					<div ng-show="!passLower" class="red-words"><span class="glyphicon glyphicon-remove"></span><span> Your password don't have LowerCase</span></div>
+					<div ng-show="passNumber" class="green-words"><span class="glyphicon glyphicon-ok"></span><span> Your password has numbers</span></div>
+					<div ng-show="!passNumber" class="red-words"><span class="glyphicon glyphicon-remove"></span><span> Your password don't have numbers</span></div>
 				</div> <!--Password requierements-->
 			</div><!--Close of col-md-4--> 
 			<div class="col-md-2 col-xs-2"></div> 
 			<div class="col-md-4 col-xs-4" ng-hide="currentUser">
 				<!--Form to log In-->
 						<form class="form-horizontal">
-						 <h2>Log in</h2>
 							<div class="form-group">
 							 Username: <input type="text" ng-model="user.username" class="form-control" placeholder="Username">
 							</div><!--Close of first from group second form-->
@@ -50,11 +90,10 @@
 							 Password: <input type="password" ng-model="user.password" class="form-control" placeholder="Password">
 							</div><!--Close of second form group second form-->
 							<div class="form-group"> 
-							 <button ng-click="logIn(user, '/profile')" class="btn pull-right">Log in</button>
+							 <button ng-click="logIn(user, '/profile')" class="btn pull-right login-button">Log in</button>
 							</div><!--Close of third form group second form-->
 						</form><!--Close of LogIn form-->
 			 </div><!--CLose of col-md-5-->
 			<div class="col-md-1 col-xs-1"></div>
 		 </div><!--Close of row-->
-		</div><!--Second container-->
-	</div>
+	</div><!--Second container-->

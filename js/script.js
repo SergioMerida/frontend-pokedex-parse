@@ -1,3 +1,31 @@
+function checkLength(clave){
+	if(clave.length>8){
+		return true;
+	}else{
+		return false;
+	};
+}
+function checkUpper(clave){
+	if(/[A-Z]/.test(clave)){
+		return true;
+	}else{
+		return false;
+	};
+}
+function checkLower(clave){
+	if(/[a-z]/.test(clave)){
+		return true;
+	}else{
+		return false;
+	};
+}
+function checkNumber(clave){
+	if(/\d/.test(clave)){
+		return true;
+	}else{
+		return false;
+	};
+}
 //Starting parse
 Parse.initialize("o738tDIjX7Oq1jSB1PtSG6LfVeZqOgpaKH0pK3dt", "p7JfKdqPlYwWoenFcH1pnxR73YDzNaHAjz6iAwhq");
 //Starting angular and setting routes
@@ -22,36 +50,15 @@ var pokemonModule = angular.module('pokemonModule', ["ngRoute"]).config(function
 	$scope.passNumber = false;
 
 	$scope.signUp = function(form, newPath) {
-		var validPass = true;
 		//check if password is longer than 8
-		if(form.password.length>8){
-			$scope.passLength = true;
-		}else{
-			$scope.passLength = false;
-			validPass = false;
-		};
+		$scope.passLength = checkLength(form.password);
 		//check if password has uppercase
-		if(/[A-Z]/.test(form.password)){
-			$scope.passUpper = true;
-		}else{
-			$scope.passUpper = false;
-			validPass = false;
-		};
+		$scope.passUpper = checkUpper(form.password);
 		//check if password has lowercase
-		if(/[a-z]/.test(form.password)){
-			$scope.passLower = true;
-		}else{
-			$scope.passLower = false;
-			validPass = false;
-		};
+		$scope.passLower = checkLower(form.password);
 		//check if password has digits
-		if(/\d/.test(form.password)){
-			$scope.passNumber = true;
-		}else{
-			$scope.passNumber = false;
-			validPass = false;
-		};
-		if(validPass){
+		$scope.passNumber = checkNumber(form.password);
+		if($scope.passLength && $scope.passUpper && $scope.passLower && $scope.passNumber){
 			var user = new Parse.User();
 			user.set("email", form.email);
 			user.set("username", form.username);
